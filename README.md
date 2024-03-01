@@ -49,5 +49,5 @@ MeuObjetoMock objetoMock;
 public void setUp() {
     MockitoAnnotations.initMocks(this);
 }
-
+```
 Este `README.md` fornece uma visão geral do projeto, explica os recursos do Mockito utilizados e como executar os testes. Espero que isso te ajude!

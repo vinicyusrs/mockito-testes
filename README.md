@@ -20,3 +20,34 @@ MeuObjetoMock objetoMock = Mockito.mock(MeuObjetoMock.class);
 
 // Configurando um comportamento para o mock
 Mockito.when(objetoMock.metodo()).thenReturn(valorRetorno);
+
+Verify
+O método verify() do Mockito é usado para verificar se um método em um objeto mock foi chamado com os argumentos corretos durante o teste
+
+// Verificando se um método foi chamado
+Mockito.verify(objetoMock).metodo(argumento);
+
+Captor
+O captor (ArgumentCaptor) é usado para capturar argumentos passados para métodos de objetos mock durante os testes, permitindo a verificação desses argumentos.
+// Criando um captor
+ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+
+// Capturando argumentos
+Mockito.verify(objetoMock).metodo(captor.capture());
+
+// Obtendo o valor capturado
+String argumentoCapturado = captor.getValue();
+
+Mockito-inline
+O mockito-inline é uma extensão do Mockito que permite o uso de anotações @Mock, @Spy, @Captor diretamente no código de teste sem a necessidade de inicialização manual.
+// Usando a anotação @Mock
+@Mock
+MeuObjetoMock objetoMock;
+
+// Inicializando os mocks
+@Before
+public void setUp() {
+    MockitoAnnotations.initMocks(this);
+}
+
+Este `README.md` fornece uma visão geral do projeto, explica os recursos do Mockito utilizados e como executar os testes. Espero que isso te ajude!
